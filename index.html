@@ -17,7 +17,7 @@
       color: white;
       letter-spacing: 0.5rem;
       margin: 0 auto;
-      padding-top: 0.7rem;
+      padding-top: 0.8rem;
       width: 100%;
       text-align: center;
     }
@@ -57,10 +57,12 @@
       controls = new OrbitControls(camera, renderer.domElement)
 
       controls.autoRotate = true
-      controls.autoRotateSpeed = 10.6
+      controls.autoRotateSpeed = 4.0
       controls.enableDamping = true
 
       pointlight = new THREE.PointLight(0xffffff, 1)
+      // pointlight = new THREE.PointLight(0x0000ff, 0)
+      // pointlight.position.set(20, 200, 1000)
       pointlight.position.set(200, 200, 2000)
       scene.add(pointlight)
 
@@ -75,7 +77,13 @@
         texture.repeat.y = 6
 
         const sphereMaterial = {
-          color: 0xff0000,
+          // color: 0x20B0F5,
+          // color: 0xC6DCF5,
+          // color: 0x4d5051,
+          // color: 0xd7fffe,
+          // color: 0x030764,
+          // color: 0x2c6fbb,
+          color: 0x448ee4,
           clearcoatRoughness: 0.1,
           clearcoat: 1.0,
           roughness: 0.5,
@@ -86,7 +94,7 @@
         }
 
         // let sphereGeo = new THREE.SphereGeometry(100, 64, 64)
-        let sphereGeo = new THREE.SphereGeometry(200, 64, 64)
+        let sphereGeo = new THREE.SphereGeometry(195, 64, 64)
         let sphereMat = new THREE.MeshPhysicalMaterial(sphereMaterial)
         let sphereMesh = new THREE.Mesh(sphereGeo, sphereMat)
         scene.add(sphereMesh)
